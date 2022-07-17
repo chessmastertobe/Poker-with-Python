@@ -666,36 +666,36 @@ def main():
                 self.pot += self.big_blind_amount
             self.ask_players()
 
-    class App(Tk):
-        def __init__(self, *args, **kwargs):
-            Tk.__init__(self, *args, **kwargs)
-            self.game_object = object
+    #class App(Tk):
+       # def __init__(self, *args, **kwargs):
+         #   Tk.__init__(self, *args, **kwargs)
+        #    self.game_object = object
 
-            container = Frame(self)
-            container.pack(side="top", fill="both", expand=True)
-            container.grid_rowconfigure(0, weight=1)
-            container.grid_columnconfigure(0, weight=1)
+          #  container = Frame(self)
+          #  container.pack(side="top", fill="both", expand=True)
+          #  container.grid_rowconfigure(0, weight=1)
+        #    container.grid_columnconfigure(0, weight=1)
 
-            self.frames = {}
+           # self.frames = {}
 
-            list_of_frames = [StartPage, GamePage]
+          #  list_of_frames = [StartPage, GamePage]
 
-            for F in list_of_frames:
-                frame = F(container, self)
-                self.frames[F] = frame
-                frame.grid(row=0, column=0, sticky="nsew")
+          #  for F in list_of_frames:
+          #      frame = F(container, self)
+           #     self.frames[F] = frame
+          #      frame.grid(row=0, column=0, sticky="nsew")
 
-            self.fresh = True
-            self.show_frame(StartPage)
+           # self.fresh = True
+         #   self.show_frame(StartPage)
 
-        def show_frame(self, context):
-            frame = self.frames[context]
-            print("waiting")
-            if not self.fresh:
-                time.sleep(0.1)
-                frame.update(game_info_q.get())
-            self.fresh = False
-            frame.tkraise()
+        #def show_frame(self, context):
+          #  frame = self.frames[context]
+           # print("waiting")
+          #  if not self.fresh:
+          #      time.sleep(0.1)
+         #       frame.update(game_info_q.get())
+          #  self.fresh = False
+        #    frame.tkraise()
 
     class StartPage(Frame):
         def __init__(self, parent, controller):
