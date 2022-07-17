@@ -1,7 +1,7 @@
 import random
 import itertools
 from collections import Counter
-from tkinter import *
+#from tkinter import *
 from PIL import ImageTk, Image  #  only non_standard dependency you need to DL
 import threading
 import queue
